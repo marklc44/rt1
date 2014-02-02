@@ -1,0 +1,56 @@
+
+body{
+	height:100%;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+#panorama-container {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	overflow:hidden;
+	z-index:0;
+}
+
+#panorama {
+	background:url(../images/panoramic-demo-reel.jpg) repeat-x;
+	background-position:0px 0px;
+	height:100%;
+	width:100%;
+}
+.scroll-right  {
+	-webkit-animation-name:pano-rt 2s ease infinite 0s;
+	-webkit-animation-play-state:running;
+}
+.scroll-left {
+	-webkit-animation-name:pano-lt 2s ease infinite 0s;
+	-webkit-animation-play-state:running;
+}
+.scroll-right-paused {
+	-webkit-animation-play-state:paused;
+}
+@-webkit-keyframes pano-rt {
+	0%{
+		-webkit-transform: translateX(0px)
+	}
+	100%{
+		-webkit-transform: translateX(8900px);
+	}
+}
+
+.scroll-left-running {
+	-webkit-animation-play-state:paused;
+}
+@-webkit-keyframes pano-lt {
+
+	0%{
+		-webkit-transform:translateX(0);
+	}
+	100%{
+		-webkit-transform:translateX(8900px);;
+	}
+}
+

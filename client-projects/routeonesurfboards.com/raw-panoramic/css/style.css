@@ -1,0 +1,98 @@
+
+body{
+	height:100%;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+#panorama-container {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	overflow:hidden;
+	z-index:0;
+}
+
+#panorama {
+	background:url(../images/panoramic-demo-reel.jpg) repeat-x;
+	background-position:0px 0px;
+	height:100%;
+	width:100%;
+}
+.scroll-right {
+	-webkit-animation-name:panorama-rt;
+	-webkit-animation-duration:2s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-direction:alternate;
+	-webkit-animation-play-state:paused;
+}
+.scroll-right:hover {
+	-webkit-animation-play-state:running;
+
+}
+@-webkit-keyframes panorama-rt {
+
+	0%{
+		background-position:0px 0px;
+	}
+	100%{
+		background-position:8900px 0px;
+	}
+}
+.scroll-left {
+	background-position:0px 0px;
+}
+.scroll-left:hover {
+	-webkit-animation-name:panorama-lt;
+	-webkit-animation-duration:2s;
+	-webkit-animation-timing-function:ease;
+	-webkit-anmiation-iteration-count:infinite;
+}
+@-webkit-keyframes panorama-lt {
+
+	0%{
+		-webkit-transform:translateX(0);
+	}
+	100%{
+		-webkit-transform:translateX(8900px);;
+	}
+}
+
+#panorama img {
+	float:left;
+}
+
+canvas {
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+.repeat {
+	height:10px;
+	width:10px;
+	background:red;
+	float:left;
+	z-index:99999;
+}
+.circle {
+	position:absolute;
+	top:0;
+	left:0;
+	background:red;
+	height:20px;
+	width:20px;
+	border-radius:50%;
+}
+.pano {
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	z-index:0;
+}
+
